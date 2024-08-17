@@ -43,6 +43,8 @@
 ## Dependencies
 * [git](https://www.git-scm.com): version control system
 * [github](https://www.github.com): git repository hosting service
+* [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version): semantic versioning, changelogs
+* [conventional commits](https://www.conventionalcommits.org/): a specification for adding human and machine readable meaning to commit messages
 
 <!-- DEPENDENCIES_END -->
 
