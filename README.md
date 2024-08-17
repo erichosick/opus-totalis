@@ -5,7 +5,7 @@
 <!-- TITLE_END -->
 
 <!-- BADGES_START -->
- [![tool](https://img.shields.io/badge/github-blue?logo=typescript&label=tool)](https://github.com) 
+[![tool](https://img.shields.io/badge/github-blue?logo=typescript&label=tool)](https://github.com) [![langauge](https://img.shields.io/badge/javascript-blue?logo=javascript&label=langauge)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) 
 <!-- BADGES_END -->
 
 <!-- DESCRIPTION_START -->

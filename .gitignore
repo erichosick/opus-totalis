@@ -4,3 +4,6 @@
 
 # mac OS files
 .DS_Store
+
+# node temporary files
+node_modules
