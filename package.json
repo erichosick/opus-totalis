@@ -37,11 +37,15 @@
     "preinstall": "pnpm exec only-allow pnpm",
     "publish:all": "pnpm recursive publish",
     "publish:dryrun": "pnpm recursive publish --dry-run",
-    "deploy:all": "pnpm run git:haschanges && pnpm build && pnpm release && pnpm publish:all"
+    "deploy:all": "pnpm run git:haschanges && pnpm build && pnpm release && pnpm publish:all",
+    "build": "pnpm exec nx run-many -t build",
+    "build:watch": "pnpm exec nx watch --all -- nx run \\$NX_PROJECT_NAME:build",
+    "develop:watch": "pnpm exec nx watch --all -- nx run \\$NX_PROJECT_NAME:develop"
   },
   "devDependencies": {
     "@types/node": "^22.4.0",
     "commit-and-tag-version": "^12.4.1",
+    "nx": "19.4.3",
     "only-allow": "^1.2.1",
     "ts-node": "^10.9.2",
     "tslib": "^2.6.3",

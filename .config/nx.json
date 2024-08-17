@@ -1,0 +1,15 @@
+{
+  "$schema": "../node_modules/nx/schemas/nx-schema.json",
+  "targetDefaults": {
+    "build": {
+      "cache": true,
+      "inputs": [
+        "{projectRoot}/**/*.ts",
+        "!{projectRoot}/**/*.spec.ts"
+      ]
+    },
+    "test": {
+      "cache": true
+    }
+  }
+}
