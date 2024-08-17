@@ -40,7 +40,12 @@
     "deploy:all": "pnpm run git:haschanges && pnpm build && pnpm release && pnpm publish:all"
   },
   "devDependencies": {
+    "@types/node": "^22.4.0",
     "commit-and-tag-version": "^12.4.1",
-    "only-allow": "^1.2.1"
+    "only-allow": "^1.2.1",
+    "ts-node": "^10.9.2",
+    "tslib": "^2.6.3",
+    "tsx": "^4.17.0",
+    "typescript": "^5.5.4"
   }
 }

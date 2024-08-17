@@ -5,7 +5,7 @@
 <!-- TITLE_END -->
 
 <!-- BADGES_START -->
-[![tool](https://img.shields.io/badge/github-blue?logo=typescript&label=tool)](https://github.com) [![langauge](https://img.shields.io/badge/javascript-blue?logo=javascript&label=langauge)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) [![pkg manager](https://img.shields.io/badge/pnpm-blue?logo=pnpm&label=pkg+manager)](https://pnpm.io) [![workspaces](https://img.shields.io/badge/pnpm-blue?logo=pnpm&label=workspaces)](https://pnpm.io/workspaces) [![license](https://img.shields.io/badge/GPL--3.0--or--later-blue?label=license)](https://raw.githubusercontent.com/spdx/license-list-data/main/text/GPL-3.0-or-later.txt)
+[![tool](https://img.shields.io/badge/github-blue?logo=typescript&label=tool)](https://github.com) [![langauge](https://img.shields.io/badge/javascript-blue?logo=javascript&label=langauge)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) [![pkg manager](https://img.shields.io/badge/pnpm-blue?logo=pnpm&label=pkg+manager)](https://pnpm.io) [![workspaces](https://img.shields.io/badge/pnpm-blue?logo=pnpm&label=workspaces)](https://pnpm.io/workspaces) [![license](https://img.shields.io/badge/GPL--3.0--or--later-blue?label=license)](https://raw.githubusercontent.com/spdx/license-list-data/main/text/GPL-3.0-or-later.txt) [![language](https://img.shields.io/badge/typescript-blue?logo=typescript&label=language)](https://www.typescriptlang.org) 
 <!-- BADGES_END -->
 
 <!-- DESCRIPTION_START -->
@@ -61,6 +61,7 @@ cd opus-totalis && pnpm install
 * [conventional commits](https://www.conventionalcommits.org/): a specification for adding human and machine readable meaning to commit messages
 * [pnpm](https://pnpm.io): effecient package manager for node.js
 * [pnpm workspace](https://pnpm.io/workspaces): support workspaces and mono-repos
+* [typescript](https://www.npmjs.com/package/typescript): typescript programming language
 
 <!-- DEPENDENCIES_END -->
 
