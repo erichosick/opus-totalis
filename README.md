@@ -5,7 +5,7 @@
 <!-- TITLE_END -->
 
 <!-- BADGES_START -->
-[![tool](https://img.shields.io/badge/github-blue?logo=typescript&label=tool)](https://github.com) [![langauge](https://img.shields.io/badge/javascript-blue?logo=javascript&label=langauge)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) [![pkg manager](https://img.shields.io/badge/pnpm-blue?logo=pnpm&label=pkg+manager)](https://pnpm.io) [![workspaces](https://img.shields.io/badge/pnpm-blue?logo=pnpm&label=workspaces)](https://pnpm.io/workspaces) [![license](https://img.shields.io/badge/GPL--3.0--or--later-blue?label=license)](https://raw.githubusercontent.com/spdx/license-list-data/main/text/GPL-3.0-or-later.txt) [![language](https://img.shields.io/badge/typescript-blue?logo=typescript&label=language)](https://www.typescriptlang.org) [![ci](https://img.shields.io/badge/nx-blue?label=ci)](https://nx.dev/)
+[![tool](https://img.shields.io/badge/github-blue?logo=typescript&label=tool)](https://github.com) [![langauge](https://img.shields.io/badge/javascript-blue?logo=javascript&label=langauge)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) [![pkg manager](https://img.shields.io/badge/pnpm-blue?logo=pnpm&label=pkg+manager)](https://pnpm.io) [![workspaces](https://img.shields.io/badge/pnpm-blue?logo=pnpm&label=workspaces)](https://pnpm.io/workspaces) [![license](https://img.shields.io/badge/GPL--3.0--or--later-blue?label=license)](https://raw.githubusercontent.com/spdx/license-list-data/main/text/GPL-3.0-or-later.txt) [![language](https://img.shields.io/badge/typescript-blue?logo=typescript&label=language)](https://www.typescriptlang.org) [![ci](https://img.shields.io/badge/nx-blue?label=ci)](https://nx.dev/) [![linting](https://img.shields.io/badge/eslint-blue?label=linting)](https://eslint.org/) [![code style](https://img.shields.io/badge/prettier-blue?label=code+style)](https://prettier.io/)
 <!-- BADGES_END -->
 
 <!-- DESCRIPTION_START -->
@@ -73,6 +73,8 @@ pnpm build:watch
 * [pnpm workspace](https://pnpm.io/workspaces): support workspaces and mono-repos
 * [typescript](https://www.npmjs.com/package/typescript): typescript programming language
 * [nx](https://nx.dev): fast, maintainable CI for monorepos
+* [eslint](https://eslint.org/): find and fix problems in your JavaScript code
+* [prettier](https://prettier.io/): opinionated code formatter
 
 <!-- DEPENDENCIES_END -->
 

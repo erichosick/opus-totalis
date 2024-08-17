@@ -40,16 +40,37 @@
     "deploy:all": "pnpm run git:haschanges && pnpm build && pnpm release && pnpm publish:all",
     "build": "pnpm exec nx run-many -t build",
     "build:watch": "pnpm exec nx watch --all -- nx run \\$NX_PROJECT_NAME:build",
-    "develop:watch": "pnpm exec nx watch --all -- nx run \\$NX_PROJECT_NAME:develop"
+    "develop:watch": "pnpm exec nx watch --all -- nx run \\$NX_PROJECT_NAME:develop",
+    "eslint": "pnpm exec eslint --config eslint.config.mjs . .config",
+    "lint": "pnpm eslint",
+    "lint:watch": "nodemon --config .config/nodemon-lint.config.json --exec 'pnpm eslint'",
+    "prettier:write": "pnpm exec prettier . --write",
+    "prettier:check": "pnpm exec prettier . --check"
   },
   "devDependencies": {
+    "@eslint/js": "^9.9.0",
     "@types/node": "^22.4.0",
     "commit-and-tag-version": "^12.4.1",
+    "eslint": "9.*",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.35.0",
+    "globals": "^15.9.0",
     "nx": "19.4.3",
     "only-allow": "^1.2.1",
+    "prettier": "^3.3.3",
     "ts-node": "^10.9.2",
     "tslib": "^2.6.3",
     "tsx": "^4.17.0",
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.1.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "eslint": "9.x",
+      "@types/react": "18.3.3",
+      "@types/react-dom": "18.3.0",
+      "react": "18.3.1",
+      "react-dom": "18.3.1"
+    }
   }
 }
