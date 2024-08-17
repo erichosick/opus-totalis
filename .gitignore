@@ -11,3 +11,6 @@ node_modules
 # pnpm temporary files
 .pnpm
 .pnpm-debug.log*
+
+# distribution files created by builds
+dist

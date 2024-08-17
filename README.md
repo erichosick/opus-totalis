@@ -5,7 +5,7 @@
 <!-- TITLE_END -->
 
 <!-- BADGES_START -->
-[![tool](https://img.shields.io/badge/github-blue?logo=typescript&label=tool)](https://github.com) [![langauge](https://img.shields.io/badge/javascript-blue?logo=javascript&label=langauge)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) [![pkg manager](https://img.shields.io/badge/pnpm-blue?logo=pnpm&label=pkg+manager)](https://pnpm.io) 
+[![tool](https://img.shields.io/badge/github-blue?logo=typescript&label=tool)](https://github.com) [![langauge](https://img.shields.io/badge/javascript-blue?logo=javascript&label=langauge)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) [![pkg manager](https://img.shields.io/badge/pnpm-blue?logo=pnpm&label=pkg+manager)](https://pnpm.io) [![workspaces](https://img.shields.io/badge/pnpm-blue?logo=pnpm&label=workspaces)](https://pnpm.io/workspaces) 
 <!-- BADGES_END -->
 
 <!-- DESCRIPTION_START -->
@@ -60,6 +60,7 @@ cd opus-totalis && pnpm install
 * [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version): semantic versioning, changelogs
 * [conventional commits](https://www.conventionalcommits.org/): a specification for adding human and machine readable meaning to commit messages
 * [pnpm](https://pnpm.io): effecient package manager for node.js
+* [pnpm workspace](https://pnpm.io/workspaces): support workspaces and mono-repos
 
 <!-- DEPENDENCIES_END -->
 
@@ -87,3 +88,16 @@ cd opus-totalis && pnpm install
 
 <!-- ADDITIONAL_NOTES_END -->
 
+
+<!-- WORKSPACES_START -->
+
+## Workspaces
+
+* [utilities](utilities/README.md): highly reusable packages, that provide utility, libraries, components and modules.
+* [packages](packages/README.md): libraries, toolchainthat provide higher order functionality.
+* [projects](projects/README.md): command line tools, documentation and services.
+* [products](products/README.md): complete applications, services and websites
+* [sqlpm-packages](sqlpm-packages/README.md): contains sqlpm installable packages
+
+
+<!-- WORKSPACES_END -->
