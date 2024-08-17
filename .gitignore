@@ -17,3 +17,6 @@ dist
 
 # nx temporary files
 .nx
+
+# test files
+coverage
