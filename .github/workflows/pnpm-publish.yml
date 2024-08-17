@@ -1,4 +1,4 @@
-name: pnpm Example Workflow
+name: pnpm 
 
 # trigger on push to main instead of github release as trigger for the action
 on:
@@ -27,3 +27,9 @@ jobs:
         cache: 'pnpm'
     - name: Install dependencies
       run: pnpm install
+
+    # verify that the code is formatted correctly and fail
+    - name: Run Prettier check
+      run: pnpm run prettier:check
+    - name: Say Hello
+      run: echo "Hello"      
