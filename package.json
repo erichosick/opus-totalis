@@ -34,7 +34,10 @@
     "release": "pnpm run git:haschanges && pnpm -r run release && commit-and-tag-version",
     "release:first": "pnpm run git:haschanges && commit-and-tag-version --first-release",
     "release:dryrun": "pnpm run git:haschanges && pnpm -r run release:dryrun && commit-and-tag-version --dry-run",
-    "preinstall": "pnpm exec only-allow pnpm"
+    "preinstall": "pnpm exec only-allow pnpm",
+    "publish:all": "pnpm recursive publish",
+    "publish:dryrun": "pnpm recursive publish --dry-run",
+    "deploy:all": "pnpm run git:haschanges && pnpm build && pnpm release && pnpm publish:all"
   },
   "devDependencies": {
     "commit-and-tag-version": "^12.4.1",
