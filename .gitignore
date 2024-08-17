@@ -7,3 +7,7 @@
 
 # node temporary files
 node_modules
+
+# pnpm temporary files
+.pnpm
+.pnpm-debug.log*
