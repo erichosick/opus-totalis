@@ -5,7 +5,7 @@
 <!-- TITLE_END -->
 
 <!-- BADGES_START -->
-[![tool](https://img.shields.io/badge/github-blue?logo=typescript&label=tool)](https://github.com) [![langauge](https://img.shields.io/badge/javascript-blue?logo=javascript&label=langauge)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) [![pkg manager](https://img.shields.io/badge/pnpm-blue?logo=pnpm&label=pkg+manager)](https://pnpm.io) [![workspaces](https://img.shields.io/badge/pnpm-blue?logo=pnpm&label=workspaces)](https://pnpm.io/workspaces) 
+[![tool](https://img.shields.io/badge/github-blue?logo=typescript&label=tool)](https://github.com) [![langauge](https://img.shields.io/badge/javascript-blue?logo=javascript&label=langauge)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) [![pkg manager](https://img.shields.io/badge/pnpm-blue?logo=pnpm&label=pkg+manager)](https://pnpm.io) [![workspaces](https://img.shields.io/badge/pnpm-blue?logo=pnpm&label=workspaces)](https://pnpm.io/workspaces) [![license](https://img.shields.io/badge/GPL--3.0--or--later-blue?label=license)](https://raw.githubusercontent.com/spdx/license-list-data/main/text/GPL-3.0-or-later.txt)
 <!-- BADGES_END -->
 
 <!-- DESCRIPTION_START -->
@@ -81,6 +81,12 @@ cd opus-totalis && pnpm install
 <!-- FAQ_END -->
 
 <!-- LICENSE_START -->
+
+# Software License
+
+This software is licensed under GPL-3.0-or-later. For more details, see [LICENSE](./LICENSE).
+
+Since this is a workspace, other packages within it may be licensed under different terms. In such cases, the package will contain its own licensing terms.
 
 <!-- LICENSE_END -->
 
