@@ -5,6 +5,7 @@ on:
   pull_request:
     branches:
       - main
+  workflow_dispatch:  # Add this line to enable manual triggering
 
 # see https://pnpm.io/continuous-integration#github-actions
 jobs:
