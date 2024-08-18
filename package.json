@@ -39,6 +39,7 @@
     "publish:dryrun": "pnpm recursive publish --dry-run",
     "deploy:all": "pnpm run git:haschanges && pnpm build && pnpm release && pnpm publish:all",
     "build": "pnpm exec nx run-many -t build",
+    "build:affected": "pnpm exec nx affected --target=build --base=origin/main --head=HEAD",
     "build:watch": "pnpm exec nx watch --all -- nx run \\$NX_PROJECT_NAME:build",
     "develop:watch": "pnpm exec nx watch --all -- nx run \\$NX_PROJECT_NAME:develop",
     "eslint": "pnpm exec eslint --config eslint.config.mjs . .config",
