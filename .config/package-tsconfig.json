@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "outDir": "${configDir}/dist",
+    "baseUrl": "${configDir}",
+    "paths": {
+      "~/*": ["${configDir}/src/*"]
+    },
+    "noEmit": false,
+    "declaration": true,
+    "sourceMap": true,
+    "declarationMap": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["ESNext"],
+    "types": ["node", "jest"],
+    "allowJs": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true
+  },
+  "include": ["${configDir}/src/**/*.ts"],
+  "exclude": ["${configDir}/node_modules", "${configDir}/dist", "${configDir}/**/*.spec.ts"]
+
+}
