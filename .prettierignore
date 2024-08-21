@@ -5,4 +5,4 @@ README.md
 jest.config.ts
 eslint.config.mjs
 CHANGELOG.md
-*/pnpm-publish.yml
+.github/workflows/*
