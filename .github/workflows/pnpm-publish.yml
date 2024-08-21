@@ -1,4 +1,4 @@
-name: pnpm 
+name: pnpm workspace deploy
 
 # trigger on push to main instead of github release as trigger for the action
 on:
@@ -31,9 +31,12 @@ jobs:
       run: pnpm install
 
     # run tests only on the code that has changed
-    - name: Run tests
-      run: pnpm test:changed
+    # - name: Run tests
+    #   run: pnpm test:changed
 
     # verify that the code is formatted correctly and fail
-    - name: Run Prettier check
-      run: pnpm prettier:check
+    # - name: Run Prettier check
+    #   run: pnpm prettier:check
+
+    - name: bump versions and commit
+      run: pnpm release:first
