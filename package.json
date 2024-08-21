@@ -32,7 +32,7 @@
   "scripts": {
     "git:haschanges": "sh -c 'if [ -n \"$(git status --porcelain)\" ]; then echo \"You have uncommitted changes. Please commit or stash them before releasing.\"; exit 1; fi'",
     "release": "pnpm run git:haschanges && pnpm -r run release && commit-and-tag-version",
-    "release:first": "pnpm run git:haschanges && commit-and-tag-version --first-release",
+    "release:first": "pnpm run commit-and-tag-version --first-release",
     "release:dryrun": "pnpm run git:haschanges && pnpm -r run release:dryrun && commit-and-tag-version --dry-run",
     "preinstall": "pnpm exec only-allow pnpm",
     "publish:all": "pnpm recursive publish",
