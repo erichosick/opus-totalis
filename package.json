@@ -25,6 +25,7 @@
     "url": "https://github.com/erichosick"
   },
   "contributors": [],
+  "packageManager": "pnpm@^9.7.1",
   "engines": {
     "node": "^18.18.0 || ^20.9.0 || >=21.1.0",
     "npm": "Use pnpm instead of npm."
