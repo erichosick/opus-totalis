@@ -5,6 +5,12 @@ on:
   pull_request:
     branches:
       - main
+
+    # TODO: dynamically add the paths using the software-tool-automation
+    paths:
+      - 'packages/**'
+      - 'utils/**'
+      
   workflow_dispatch:  # Add this line to enable manual triggering
 
 # see https://pnpm.io/continuous-integration#github-actions
