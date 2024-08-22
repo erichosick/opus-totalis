@@ -15,28 +15,29 @@ jobs:
       matrix:
         node-version: [20]
     steps:
-    # setup pnpm and install project
+
+    # setup pnpm using the version from the packageManager property
+    # in package.json (see https://github.com/pnpm/action-setup?tab=readme-ov-file#install-only-pnpm-with-packagemanager
     
-    - uses: actions/checkout@v4
-    - name: Install pnpm
-      uses: pnpm/action-setup@v4
-      with:
-        version: 9
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'pnpm'
-    - name: Install dependencies
-      run: pnpm install
+    # - uses: actions/checkout@v4
+    # - name: Install pnpm
+    #   uses: pnpm/action-setup@v4
 
-    # run tests only on the code that has changed
-    # - name: Run tests
-    #   run: pnpm test:changed
+    # - name: Use Node.js ${{ matrix.node-version }}
+    #   uses: actions/setup-node@v4
+    #   with:
+    #     node-version: ${{ matrix.node-version }}
+    #     cache: 'pnpm'
+    # - name: Install dependencies
+    #   run: pnpm install
 
-    # verify that the code is formatted correctly and fail
-    # - name: Run Prettier check
-    #   run: pnpm prettier:check
+    # # run tests only on the code that has changed
+    # # - name: Run tests
+    # #   run: pnpm test:changed
 
-    - name: bump versions and commit
-      run: pnpm release:first
+    # # verify that the code is formatted correctly and fail
+    # # - name: Run Prettier check
+    # #   run: pnpm prettier:check
+
+    # - name: bump versions and commit
+    #   run: pnpm release:first
