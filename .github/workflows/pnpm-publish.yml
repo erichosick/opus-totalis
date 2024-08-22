@@ -56,6 +56,3 @@ jobs:
     # verify that the code is formatted correctly and fail
     - name: Verify code formatting using prettier
       run: pnpm prettier:check
-
-    # - name: bump versions and commit
-    #   run: pnpm release:first
