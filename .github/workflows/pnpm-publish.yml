@@ -13,6 +13,9 @@ on:
       
   workflow_dispatch:  # Add this line to enable manual triggering
 
+# prevent concurrent runs of this workflow on the same branch
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
 # see https://pnpm.io/continuous-integration#github-actions
 jobs:
   build:
