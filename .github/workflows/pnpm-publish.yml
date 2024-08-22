@@ -59,7 +59,7 @@ jobs:
 
     # run tests only on the code that has changed
     - name: Run tests on packages that have changed
-      run: pnpm test
+      run: pnpm ci:test:affected
 
     # verify that the code is formatted correctly and fail
     - name: Verify code formatting using prettier
