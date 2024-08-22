@@ -47,14 +47,13 @@ jobs:
     - name: Install dependencies
       run: pnpm install        
 
+    # run tests only on the code that has changed
+    - name: Run tests on packages that have changed
+      run: pnpm test:changed
 
-    # # run tests only on the code that has changed
-    # # - name: Run tests
-    # #   run: pnpm test:changed
-
-    # # verify that the code is formatted correctly and fail
-    # # - name: Run Prettier check
-    # #   run: pnpm prettier:check
+    # verify that the code is formatted correctly and fail
+    - name: Verify code formatting using prettier
+      run: pnpm prettier:check
 
     # - name: bump versions and commit
     #   run: pnpm release:first
