@@ -26,9 +26,13 @@ jobs:
       # see https://github.com/actions/checkout
       uses: actions/checkout@v4
       with:
-        # so we can reference main
-        fetch-depth: 0
-
+        fetch-depth: 0  # Fetch all branches
+        ref: ${{ github.ref }}  # Ensure the current branch is checked out
+        # Fetch both the current branch and the 'main' branch
+        refspec: |
+          +refs/heads/${{ github.ref_name }}*:refs/remotes/origin/${{ github.ref_name }}*
+          +refs/heads/main:refs/remotes/origin/main        
+        
     # setup pnpm using the version from the packageManager property
     # see https://github.com/pnpm/action-setup?tab=readme-ov-file#install-only-pnpm-with-packagemanager
 
