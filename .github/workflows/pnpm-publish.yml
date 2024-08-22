@@ -38,7 +38,9 @@ jobs:
         run_install: false
 
     - name: Install Node.js
-      uses: actions/setup-node@v4 # see https://github.com/actions/setup-node
+      # see https://github.com/actions/setup-node
+      # see https://github.com/actions/setup-node/blob/main/docs/advanced-usage.md
+      uses: actions/setup-node@v4
       with:
         # node version will come from the package.json file
         # node-version: ...
