@@ -32,6 +32,9 @@ jobs:
         refspec: |
           +refs/heads/${{ github.ref_name }}*:refs/remotes/origin/${{ github.ref_name }}*
           +refs/heads/main:refs/remotes/origin/main        
+
+    - name: Verify Git Branches
+      run: git branch -a
         
     # setup pnpm using the version from the packageManager property
     # see https://github.com/pnpm/action-setup?tab=readme-ov-file#install-only-pnpm-with-packagemanager
