@@ -43,6 +43,8 @@
     "build:changed": "pnpm exec nx affected --target=build --base=origin/main --head=HEAD",
     "ci:build:changed": "pnpm exec nx affected --target=build --base=remotes/origin/main --head=HEAD",
     "ci:release": "pnpm -r run release && commit-and-tag-version",
+    "build:affected": "pnpm exec nx affected --target=build --base=origin/main --head=HEAD",
+    "ci:build:affected": "pnpm exec nx affected --target=build --base=remotes/origin/main --head=HEAD",
     "build:watch": "pnpm exec nx watch --all -- nx run \\$NX_PROJECT_NAME:build",
     "develop:watch": "pnpm exec nx watch --all -- nx run \\$NX_PROJECT_NAME:develop",
     "eslint": "pnpm exec eslint --config eslint.config.mjs . .config",
