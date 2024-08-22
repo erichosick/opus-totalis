@@ -11,18 +11,35 @@ on:
 jobs:
   build:
     runs-on: ubuntu-22.04
-    strategy:
-      matrix:
-        node-version: [20]
+    # strategy:
+    #   matrix:
+    #     node-version: [20]
     steps:
 
+    - name: Checkout
+      uses: actions/checkout@v4
+
     # setup pnpm using the version from the packageManager property
-    # in package.json (see https://github.com/pnpm/action-setup?tab=readme-ov-file#install-only-pnpm-with-packagemanager
-    
-    - uses: actions/checkout@v4
+    # see https://github.com/pnpm/action-setup?tab=readme-ov-file#install-only-pnpm-with-packagemanager
+
     - name: Install pnpm
       uses: pnpm/action-setup@v4
-      # we omit with: version x
+      with:
+        # version is pulled from packageManager property in package.json
+        # version: 9
+
+        # we will be caching node and then install dependencies
+        run_install: false
+
+    - name: Install Node.js
+      uses: actions/setup-node@v4
+      with:
+        # node version will come from the package.json file
+        # node-version: 20
+        cache: 'pnpm'
+
+    - name: Install dependencies
+      run: pnpm install        
 
     # - name: Use Node.js ${{ matrix.node-version }}
     #   uses: actions/setup-node@v4
