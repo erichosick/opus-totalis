@@ -1,4 +1,4 @@
-name: pnpm workspace deploy
+name: On pull request to main, verify the tests pass and we can build all the packages
 
 # trigger on push to main instead of github release as trigger for the action
 on:
@@ -56,3 +56,7 @@ jobs:
     # verify that the code is formatted correctly and fail
     - name: Verify code formatting using prettier
       run: pnpm prettier:check
+
+    # verify that we can build our packages
+    - name: Verify code will build successfull
+      run: pnpm build
