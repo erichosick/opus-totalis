@@ -23,13 +23,18 @@ jobs:
     steps:
 
     - name: Checkout repository from github
+      # see https://github.com/actions/checkout
       uses: actions/checkout@v4
+      with:
+        # so we can reference main
+        fetch-depth: 0
 
     # setup pnpm using the version from the packageManager property
     # see https://github.com/pnpm/action-setup?tab=readme-ov-file#install-only-pnpm-with-packagemanager
 
     - name: Install package manager pnpm
-      uses: pnpm/action-setup@v4 # see https://github.com/pnpm/action-setup
+      # see https://github.com/pnpm/action-setup
+      uses: pnpm/action-setup@v4
       with:
         # version is pulled from packageManager property in package.json
         # version: ...
