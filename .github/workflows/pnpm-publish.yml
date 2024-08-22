@@ -26,12 +26,8 @@ jobs:
       # see https://github.com/actions/checkout
       uses: actions/checkout@v4
       with:
-        fetch-depth: 0  # Fetch all branches
-        # ref: ${{ github.ref }}  # Ensure the current branch is checked out
-        # # Fetch both the current branch and the 'main' branch
-        # refspec: |
-        #   +refs/heads/${{ github.ref_name }}*:refs/remotes/origin/${{ github.ref_name }}*
-        #   +refs/heads/main:refs/remotes/origin/main        
+        # fetch branches so we can check for changes
+        fetch-depth: 0
 
     - name: Show git branches fetched from github repository
       run: git branch -a
@@ -63,7 +59,7 @@ jobs:
 
     # run tests only on the code that has changed
     - name: Run tests on packages that have changed
-      run: pnpm test:changed
+      run: pnpm test
 
     # verify that the code is formatted correctly and fail
     - name: Verify code formatting using prettier
