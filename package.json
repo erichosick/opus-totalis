@@ -52,7 +52,7 @@
     "test": "JEST_COVERAGE=true NODE_ENV=test jest --config jest.config.ts",
     "test:watch": "JEST_COVERAGE=false NODE_ENV=test jest --watch --config jest.config.ts",
     "test:debug": "jest --watch --config jest.config.ts",
-    "ci:test:affected": "git diff --name-only --diff-filter=ACM $(git merge-base HEAD remotes/origin/main) HEAD | grep -E '.*\\.spec\\.(ts)$' | xargs pnpm exec jest --findRelatedTests --config jest.config.ts",
+    "ci:test:affected": "git diff --name-only --diff-filter=ACM $(git merge-base HEAD remotes/origin/main) HEAD | xargs pnpm exec jest --findRelatedTests --config jest.config.ts",
     "commitlint": "pnpm exec commitlint --config=.config/commitlint.config.mjs --strict --verbose",
     "prepare": "husky"
   },
