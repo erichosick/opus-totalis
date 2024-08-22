@@ -19,9 +19,10 @@ jobs:
     # setup pnpm using the version from the packageManager property
     # in package.json (see https://github.com/pnpm/action-setup?tab=readme-ov-file#install-only-pnpm-with-packagemanager
     
-    # - uses: actions/checkout@v4
-    # - name: Install pnpm
-    #   uses: pnpm/action-setup@v4
+    - uses: actions/checkout@v4
+    - name: Install pnpm
+      uses: pnpm/action-setup@v4
+      # we omit with: version x
 
     # - name: Use Node.js ${{ matrix.node-version }}
     #   uses: actions/setup-node@v4
