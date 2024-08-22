@@ -57,6 +57,10 @@ jobs:
     - name: Verify code formatting using prettier
       run: pnpm prettier:check
 
+    # verify that the code lints correctly
+    - name: Verify code is linted correctly using eslint
+      run: pnpm lint
+
     # verify that we can build our packages
     - name: Verify packages that changed will build successfully
       run: pnpm build:affected
