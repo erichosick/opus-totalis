@@ -1,2 +1,10 @@
+# Skip running tests if CI=true
+if [ "$CI" = "true" ]; then
+  echo "CI environment detected. Skipping pre-commit tests."
+  exit 0
+else
+  echo "Running pre-commit tests..."
+fi
+
 #run tests on changed files
 pnpm test:changed
