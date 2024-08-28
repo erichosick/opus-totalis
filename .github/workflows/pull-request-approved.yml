@@ -17,6 +17,8 @@ jobs:
     - name: Checkout repository from github
       # see https://github.com/actions/checkout
       uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}      
 
     - name: Exit if the branch is not staging.
       run: |
@@ -60,6 +62,8 @@ jobs:
     #     commit_options: "--follow-tags"
 
     - name: Pushing changes to the repository
+      # env:
+      #   GITHUB_TOKEN: ${{ github.token }}
       run: |
-        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        # git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
         git push --follow-tags origin $BRANCH_NAME
