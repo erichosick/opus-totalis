@@ -54,11 +54,12 @@ jobs:
         pnpm ci:release
 
     # Commit all changed files back to the repository
-    - uses: stefanzweifel/git-auto-commit-action@v5
-      with:
-        commit_message: "chore(version): bump versions and update CHANGELOG.md"
-        commit_options: "--follow-tags"
+    # - uses: stefanzweifel/git-auto-commit-action@v5
+    #   with:
+    #     commit_message: "chore(version): bump versions and update CHANGELOG.md"
+    #     commit_options: "--follow-tags"
 
-    # - name: Pushing changes to the repository
-    #   run: |
-    #     git push --follow-tags origin staging $BRANCH_NAME
+    - name: Pushing changes to the repository
+      run: |
+        # git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        git push --follow-tags origin $BRANCH_NAME
