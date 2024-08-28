@@ -18,16 +18,12 @@ jobs:
       # see https://github.com/actions/checkout
       uses: actions/checkout@v4
 
-    - name: Verify the PR is from staging branch
-      id: check_branch
+    - name: Exit if the branch is not staging.
       run: |
-        if [[ "${{ github.event.pull_request.head.ref }}" == "staging" ]]; then
-          echo "correct_branch=true" >> $GITHUB_ENV
-        else
-          echo "correct_branch=false" >> $GITHUB_ENV
-    - name: Exit if the PR is not from staging branch
-      if: env.correct_branch == 'false'
-      run: exit 0
+        if [[ "$BRANCH_NAME" != "staging" ]]; then
+          echo "Not the staging branch. Exiting."
+          exit 0
+        fi
 
     - name: Install package manager pnpm
       # see https://github.com/pnpm/action-setup
