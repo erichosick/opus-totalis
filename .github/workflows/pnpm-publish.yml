@@ -5,6 +5,7 @@ on:
   pull_request:
     branches:
       - main
+      - staging
 
     # TODO: dynamically add the paths using the software-tool-automation
     paths:
@@ -57,18 +58,18 @@ jobs:
     - name: Install dependencies
       run: pnpm install        
 
-    # run tests only on the code that has changed
-    - name: Run tests on packages that have changed
-      run: pnpm ci:test:changed
+    # # run tests only on the code that has changed
+    # - name: Run tests on packages that have changed
+    #   run: pnpm ci:test:changed
 
-    # verify that the code is formatted correctly and fail
+    - name: Run all tests
+      run: pnpm test
+
     - name: Verify code formatting using prettier
       run: pnpm prettier:check
 
-    # verify that the code lints correctly
     - name: Verify code is linted correctly using eslint
       run: pnpm lint
 
-    # verify that we can build our packages
     - name: Verify packages that changed will build successfully
       run: pnpm ci:build:changed
