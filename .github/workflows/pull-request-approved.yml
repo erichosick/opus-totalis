@@ -21,7 +21,7 @@ jobs:
     - name: Exit if the branch is not staging.
       run: |
         if [[ "$BRANCH_NAME" != "staging" ]]; then
-          echo "Not the staging branch. Exiting."
+          echo "Branch must be 'staging' but was '$BRANCH_NAME'. Exiting."
           exit 0
         fi
 
