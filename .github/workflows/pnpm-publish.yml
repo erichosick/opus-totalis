@@ -1,4 +1,4 @@
-name: On pull request to main, run tests, prettier and build
+name: On pull request to main or staging, run tests, prettier and build
 
 # trigger on push to main instead of github release as trigger for the action
 on:
