@@ -61,5 +61,5 @@ jobs:
 
     - name: Pushing changes to the repository
       run: |
-        # git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
         git push --follow-tags origin $BRANCH_NAME
