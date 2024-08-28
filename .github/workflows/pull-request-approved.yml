@@ -10,6 +10,9 @@ on:
 
 jobs:
   run_on_approval:
+    permissions:
+      # enable write access to the repository
+      contents: write
     if: github.event.review.state == 'approved' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
