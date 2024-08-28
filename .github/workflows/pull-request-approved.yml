@@ -52,3 +52,7 @@ jobs:
         git config --local user.name "GitHub Actions"
         git config --local user.email "actions@github.com"
         pnpm ci:release
+
+    - name: Pushing changes to the repository
+      run: |
+        git push --follow-tags origin staging $BRANCH_NAME
