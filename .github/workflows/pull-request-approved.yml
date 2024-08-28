@@ -10,7 +10,7 @@ on:
 
 jobs:
   run_on_approval:
-    if: github.event.review.state == 'approved'
+    # if: github.event.review.state == 'approved'
     runs-on: ubuntu-latest
     steps:
 
@@ -18,47 +18,3 @@ jobs:
     # see https://github.com/actions/checkout
     uses: actions/checkout@v4
 
-    - name: Verify the PR is from staging branch
-      id: check_branch
-      run: |
-        if [[ "${{ github.event.pull_request.head.ref }}" == "staging" ]]; then
-          echo "correct_branch=true" >> $GITHUB_ENV
-        else
-          echo "correct_branch=false" >> $GITHUB_ENV
-    - name: Exit if the PR is not from staging branch
-      if: env.correct_branch == 'false'
-      run: exit 0
-
-    - name: Install package manager pnpm
-      # see https://github.com/pnpm/action-setup
-      uses: pnpm/action-setup@v4
-      with:
-        # version is pulled from packageManager property in package.json
-        # version: ...
-
-        # we will be caching node and then install dependencies
-        run_install: false
-
-    - name: Install Node.js
-      # see https://github.com/actions/setup-node
-      # see https://github.com/actions/setup-node/blob/main/docs/advanced-usage.md
-      uses: actions/setup-node@v4
-      with:
-        # node version will come from the package.json file
-        # node-version: ...
-        cache: 'pnpm'
-
-    - name: Install dependencies
-      run: pnpm install        
-
-
-    - name: Bumping all changed package versions and updating CHANGELOG.md
-      run: pnpm release
-
-    - name: Pushing changes to the repository
-      run: |
-        git config --local user.name "GitHub Actions"
-        git config --local user.email "actions@github.com"
-        git add .
-        git commit -m "chore(release): bump versions and update changelog after approval"
-        git push
