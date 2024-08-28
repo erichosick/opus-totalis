@@ -10,11 +10,10 @@ on:
 
 jobs:
   run_on_approval:
-    # if: github.event.review.state == 'approved'
+    if: github.event.review.state == 'approved'
     runs-on: ubuntu-latest
     steps:
 
     - name: Checkout repository from github
-    # see https://github.com/actions/checkout
-    uses: actions/checkout@v4
-
+      # see https://github.com/actions/checkout
+      uses: actions/checkout@v4
