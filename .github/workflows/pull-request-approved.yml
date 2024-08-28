@@ -53,6 +53,12 @@ jobs:
         git config --local user.email "actions@github.com"
         pnpm ci:release
 
-    - name: Pushing changes to the repository
-      run: |
-        git push --follow-tags origin staging $BRANCH_NAME
+    # Commit all changed files back to the repository
+    - uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: "chore(version): bump versions and update CHANGELOG.md"
+        commit_options: "--follow-tags"
+
+    # - name: Pushing changes to the repository
+    #   run: |
+    #     git push --follow-tags origin staging $BRANCH_NAME
