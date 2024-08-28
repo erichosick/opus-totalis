@@ -49,7 +49,7 @@ jobs:
 
 
     - name: Bumping all changed package versions and updating CHANGELOG.md
-      run: pnpm release
+      run: pnpm ci:release
 
     - name: Pushing changes to the repository
       run: |
