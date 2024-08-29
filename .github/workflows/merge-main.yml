@@ -54,10 +54,10 @@ jobs:
         git config --local user.email "actions@github.com"
         pnpm ci:release
 
-    - name: Pushing changes to main
-      run: |
-        # git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-        git push --follow-tags origin $BRANCH_NAME
+    # - name: Pushing changes to main
+    #   run: |
+    #     # git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+    #     git push --follow-tags origin $BRANCH_NAME
 
     - name: Sync main with staging
       run: |
