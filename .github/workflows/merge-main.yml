@@ -1,0 +1,68 @@
+name: On push to main - bump versions, update CHANGELOG.md and publish packages
+
+on:
+  push:
+    branches:
+      - main
+
+    # TODO: dynamically add the paths using the software-tool-automation
+    paths:
+      - 'packages/**'
+      - 'utils/**'
+      - 'sqlpm-packages/**'
+
+  # enable manual triggering
+  workflow_dispatch:
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout repository from github
+      # see https://github.com/actions/checkout
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}      
+
+    - name: Install package manager pnpm
+      # see https://github.com/pnpm/action-setup
+      uses: pnpm/action-setup@v4
+      with:
+        # version is pulled from packageManager property in package.json
+        # version: ...
+
+        # we will be caching node and then install dependencies
+        run_install: false
+
+    - name: Install Node.js
+      # see https://github.com/actions/setup-node
+      # see https://github.com/actions/setup-node/blob/main/docs/advanced-usage.md
+      uses: actions/setup-node@v4
+      with:
+        # node version will come from the package.json file
+        # node-version: ...
+        cache: 'pnpm'
+
+    - name: Install dependencies
+      run: pnpm install
+
+    - name: Bumping all changed package versions, update CHANGELOG.md and commit changes
+      run: |
+        git config --local user.name "GitHub Actions"
+        git config --local user.email "actions@github.com"
+        pnpm ci:release
+
+    - name: Pushing changes to main
+      run: |
+        # git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        git push --follow-tags origin $BRANCH_NAME
+
+    - name: Sync main with staging
+      run: |
+        git config --local user.name "GitHub Actions"
+        git config --local user.email "actions@github.com"
+        git checkout staging
+        git merge main
+        git push origin staging
