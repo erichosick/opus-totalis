@@ -1,0 +1,52 @@
+{
+  "name": "@ekhtest/flexible-type",
+  "version": "1.0.0",
+  "license": "GPL-3.0-or-later",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "A flexible TypeScript type compatible with JSON that preserves key data insights often lost when using the any or unknown type.",
+  "keywords": [
+    "typescript",
+    "flexible data types",
+    "json types",
+    "node object types"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    }
+  },
+  "type": "module",
+  "module": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "npx tsc",
+    "build:watch": "npx tsc --watch",
+    "release": "commit-and-tag-version --skip.tag --skip.changelog",
+    "release:dryrun": "commit-and-tag-version --dry-run --skip.tag --skip.changelog"
+  },
+  "author": {
+    "name": "Eric Hosick",
+    "email": "erichosick@gmail.com",
+    "url": "https://github.com/erichosick"
+  },
+  "bugs": {
+    "type": "git",
+    "url": "https://github.com/erichosick/sqlpm-workspace/issues"
+  },
+  "homepage": "https://github.com/erichosick/sqlpm-workspace/tree/main/packages/flexible-type",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/erichosick/sqlpm-workspace"
+  },
+  "nx": {
+    "includedScripts": [
+      "build"
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "_comment01": "Use IntelliSense to learn about possible attributes.",
+  "_comment02": "Hover to view descriptions of existing attributes.",
+  "_comment03": "For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387",
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Jest Tests",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run-script",
+        "test:debug",
+        "--",
+        "${relativeFile}"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "env": {
+        "NODE_ENV": "test"
+      }
+    }
+  ]
+}

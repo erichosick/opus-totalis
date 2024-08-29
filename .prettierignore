@@ -1,0 +1,8 @@
+pnpm-lock.yaml
+README.md
+.config/*
+.vscode/*
+jest.config.ts
+eslint.config.mjs
+CHANGELOG.md
+.github/workflows/*

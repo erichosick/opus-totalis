@@ -1,0 +1,7 @@
+# see https://pnpm.io/workspaces#referencing-workspace-packages-through-their-relative-path}
+packages:
+  - utilities/*
+  - packages/*
+  - projects/*
+  - products/*
+  - sqlpm-packages/*
