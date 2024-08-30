@@ -65,10 +65,10 @@ jobs:
         git config --local user.email "${{ github.actor }}@users.noreply.github.com"
         git push --follow-tags origin $BRANCH_NAME
 
-    # - name: Sync main with staging
-    #   run: |
-    #     git config --local user.name "${{ github.actor }}"
-    #     git config --local user.email "${{ github.actor }}@users.noreply.github.com"
-    #     git checkout staging
-    #     git merge main
-    #     git push origin staging
+    - name: Sync main with staging
+      run: |
+        git config --local user.name "${{ github.actor }}"
+        git config --local user.email "${{ github.actor }}@users.noreply.github.com"
+        git checkout staging
+        git merge main
+        git push origin staging
