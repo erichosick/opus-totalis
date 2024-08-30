@@ -63,7 +63,7 @@ jobs:
         # git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
         git config --local user.name "${{ github.actor }}"
         git config --local user.email "${{ github.actor }}@users.noreply.github.com"
-        git push --follow-tags origin $BRANCH_NAME
+        git push --follow-tags origin main
 
     - name: Sync main with staging
       run: |
