@@ -18,6 +18,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      # enable write access to the repository
+      contents: write
     steps:
 
     - name: Checkout repository from github
@@ -26,15 +29,6 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         ref: main
-
-    # - name: Verify main branch was checked out
-    #   run: |
-    #     CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
-    #     if [[ "$CURRENT_BRANCH" != "main" ]]; then
-    #       echo "Error: Expected to be on 'main' but was on '$CURRENT_BRANCH'."
-    #       exit 1
-    #     fi
-    #     echo "Verified: Checked out branch is 'main'."        
 
     - name: Install package manager pnpm
       # see https://github.com/pnpm/action-setup
@@ -64,7 +58,7 @@ jobs:
         git config --local user.email "${{ github.actor }}@users.noreply.github.com"
         pnpm ci:release
 
-    - name: Pushing changes to main
+    - name: Pushing changes to origin/main
       run: |
         # git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
         git config --local user.name "${{ github.actor }}"
