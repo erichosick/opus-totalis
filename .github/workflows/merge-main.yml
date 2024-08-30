@@ -30,6 +30,12 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         ref: main
 
+    - name: Fetch the staging and config git
+      run: |
+        git fetch origin staging:staging
+        git config --local user.name "${{ github.actor }}"
+        git config --local user.email "${{ github.actor }}@users.noreply.github.com"
+
     - name: Install package manager pnpm
       # see https://github.com/pnpm/action-setup
       uses: pnpm/action-setup@v4
@@ -54,21 +60,19 @@ jobs:
 
     - name: Bumping all changed package versions, update CHANGELOG.md and commit changes
       run: |
-        git config --local user.name "${{ github.actor }}"
-        git config --local user.email "${{ github.actor }}@users.noreply.github.com"
         pnpm ci:release
 
-    - name: Pushing changes to origin/main
-      run: |
-        # git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-        git config --local user.name "${{ github.actor }}"
-        git config --local user.email "${{ github.actor }}@users.noreply.github.com"
-        git push --follow-tags origin main
+    # - name: Pushing changes to origin/main
+    #   run: |
+    #     # git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+    #     git config --local user.name "${{ github.actor }}"
+    #     git config --local user.email "${{ github.actor }}@users.noreply.github.com"
+    #     git push --follow-tags origin main
 
-    - name: Sync main with staging
-      run: |
-        git config --local user.name "${{ github.actor }}"
-        git config --local user.email "${{ github.actor }}@users.noreply.github.com"
-        git checkout staging
-        git merge main
-        git push origin staging
+    # - name: Sync main with staging
+    #   run: |
+    #     git config --local user.name "${{ github.actor }}"
+    #     git config --local user.email "${{ github.actor }}@users.noreply.github.com"
+    #     git checkout staging
+    #     git merge main
+    #     git push origin staging
