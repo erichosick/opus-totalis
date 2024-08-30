@@ -64,21 +64,12 @@ jobs:
         git config --local user.email "${{ github.actor }}@users.noreply.github.com"
         pnpm ci:release
 
-    - name: Check for unpushed changes
+    - name: Pushing changes to main
       run: |
-        if [[ -n "$(git status --porcelain)" ]]; then
-          echo "There are changes that need to be pushed."
-          git status --short
-        else
-          echo "No changes to push."
-        fi        
-
-    # - name: Pushing changes to main
-    #   run: |
-    #     # git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-    #     git config --local user.name "${{ github.actor }}"
-    #     git config --local user.email "${{ github.actor }}@users.noreply.github.com"
-    #     git push --follow-tags origin $BRANCH_NAME
+        # git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        git config --local user.name "${{ github.actor }}"
+        git config --local user.email "${{ github.actor }}@users.noreply.github.com"
+        git push --follow-tags origin $BRANCH_NAME
 
     # - name: Sync main with staging
     #   run: |
