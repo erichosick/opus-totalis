@@ -24,7 +24,7 @@ jobs:
       run: |
         if [[ "$BRANCH_NAME" != "main" ]]; then
           echo "Branch must be 'main' but was '$BRANCH_NAME'. Exiting."
-          exit 0
+          exit 1
         fi
 
     - name: Checkout repository from github
