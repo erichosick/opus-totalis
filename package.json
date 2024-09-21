@@ -58,6 +58,7 @@
     "ci:test:changed": "git diff --name-only --diff-filter=ACM $(git merge-base HEAD remotes/origin/main) HEAD | xargs pnpm exec jest --findRelatedTests --config jest.config.ts",
     "test:changed": "JEST_COVERAGE=false NODE_ENV=test jest --onlyChanged --config jest.config.ts",
     "ci:test:changed2": "git diff --name-only --diff-filter=ACM main HEAD | grep -E '.*\\.spec\\.ts$' | xargs pnpm exec jest --config jest.config.ts",
+    "ci:test:changed3": "git diff --name-only --diff-filter=ACM $(git merge-base HEAD remotes/origin/main) HEAD | xargs pnpm exec jest --findRelatedTests --config jest.config.ts",
     "commitlint": "pnpm exec commitlint --config=.config/commitlint.config.mjs --strict --verbose",
     "prepare": "husky"
   },
