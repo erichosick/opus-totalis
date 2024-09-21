@@ -8,8 +8,6 @@ on:
     # TODO: dynamically add the paths using the software-tool-automation
     paths:
       - 'packages/**'
-      - 'utils/**'
-      - 'sqlpm-packages/**'
 
   # enable manual triggering
   workflow_dispatch:
@@ -62,9 +60,9 @@ jobs:
       run: |
         pnpm ci:release
 
-    - name: Pushing changes to origin/main and merge with staging
-      run: |
-        git push --follow-tags origin main
-        git checkout staging
-        git merge main
-        git push origin staging
+    # - name: Pushing changes to origin/main and merge with staging
+    #   run: |
+    #     git push --follow-tags origin main
+    #     git checkout staging
+    #     git merge main
+    #     git push origin staging
