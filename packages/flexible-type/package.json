@@ -1,6 +1,6 @@
 {
   "name": "@ekhtest/flexible-type",
-  "version": "2.0.1",
+  "version": "0.0.0",
   "license": "GPL-3.0-or-later",
   "private": false,
   "publishConfig": {
@@ -25,6 +25,7 @@
     "dist"
   ],
   "scripts": {
+    "ci:release": "npx workspace-release",
     "build": "npx tsc",
     "build:watch": "npx tsc --watch",
     "release": "commit-and-tag-version --skip.tag --skip.changelog",

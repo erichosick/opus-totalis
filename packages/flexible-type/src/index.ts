@@ -59,7 +59,7 @@ interface FlexibleObject {
  *
  * // A Flexible is a superset of a Person
  * const flexible: Flexible = person;
- *
+ * a change in the code
  * // Use a guard to convert from a Flexible to a Person
  * if (isPerson(flexible)) {
  *   const person: Person = flexible;
