@@ -11,8 +11,8 @@ on:
     paths:
       - 'packages/**'
       - 'utils/**'
-      
-  workflow_dispatch:  # Add this line to enable manual triggering
+
+  workflow_dispatch: # Add this line to enable manual triggering
 
 # prevent concurrent runs of this workflow on the same branch
 concurrency: ${{ github.workflow }}-${{ github.ref }}
@@ -22,54 +22,53 @@ jobs:
   build:
     runs-on: ubuntu-22.04
     steps:
+      - name: Checkout repository from github
+        # see https://github.com/actions/checkout
+        uses: actions/checkout@v4
+        with:
+          # fetch branches so we can check for changes
+          fetch-depth: 0
 
-    - name: Checkout repository from github
-      # see https://github.com/actions/checkout
-      uses: actions/checkout@v4
-      with:
-        # fetch branches so we can check for changes
-        fetch-depth: 0
+      - name: Show git branches fetched from github repository
+        run: git branch -a
 
-    - name: Show git branches fetched from github repository
-      run: git branch -a
-        
-    # setup pnpm using the version from the packageManager property
-    # see https://github.com/pnpm/action-setup?tab=readme-ov-file#install-only-pnpm-with-packagemanager
+      # setup pnpm using the version from the packageManager property
+      # see https://github.com/pnpm/action-setup?tab=readme-ov-file#install-only-pnpm-with-packagemanager
 
-    - name: Install package manager pnpm
-      # see https://github.com/pnpm/action-setup
-      uses: pnpm/action-setup@v4
-      with:
-        # version is pulled from packageManager property in package.json
-        # version: ...
+      - name: Install package manager pnpm
+        # see https://github.com/pnpm/action-setup
+        uses: pnpm/action-setup@v4
+        with:
+          # version is pulled from packageManager property in package.json
+          # version: ...
 
-        # we will be caching node and then install dependencies
-        run_install: false
+          # we will be caching node and then install dependencies
+          run_install: false
 
-    - name: Install Node.js
-      # see https://github.com/actions/setup-node
-      # see https://github.com/actions/setup-node/blob/main/docs/advanced-usage.md
-      uses: actions/setup-node@v4
-      with:
-        # node version will come from the package.json file
-        # node-version: ...
-        cache: 'pnpm'
+      - name: Install Node.js
+        # see https://github.com/actions/setup-node
+        # see https://github.com/actions/setup-node/blob/main/docs/advanced-usage.md
+        uses: actions/setup-node@v4
+        with:
+          # node version will come from the package.json file
+          # node-version: ...
+          cache: 'pnpm'
 
-    - name: Install dependencies
-      run: pnpm install        
+      - name: Install dependencies
+        run: pnpm install
 
-    # # run tests only on the code that has changed
-    # - name: Run tests on packages that have changed
-    #   run: pnpm ci:test:changed
+      # # run tests only on the code that has changed
+      # - name: Run tests on packages that have changed
+      #   run: pnpm ci:test:changed
 
-    - name: Run all tests
-      run: pnpm test
+      - name: Run all tests
+        run: pnpm test
 
-    - name: Verify code formatting using prettier
-      run: pnpm prettier:check
+      - name: Verify code formatting using prettier
+        run: pnpm prettier:check
 
-    - name: Verify code is linted correctly using eslint
-      run: pnpm lint
+      - name: Verify code is linted correctly using eslint
+        run: pnpm lint
 
-    - name: Verify packages that changed will build successfully
-      run: pnpm ci:build:changed
+      - name: Verify packages that changed will build successfully
+        run: pnpm ci:build:changed
