@@ -31,6 +31,7 @@
     "npm": "Use pnpm instead of npm."
   },
   "scripts": {
+    "ci:release": "pnpm run --recursive ci:release && pnpm workspace-release",
     "git:haschanges": "sh -c 'if [ -n \"$(git status --porcelain)\" ]; then echo \"You have uncommitted changes. Please commit or stash them before releasing.\"; exit 1; fi'",
     "release": "pnpm run git:haschanges && pnpm -r run release && commit-and-tag-version",
     "release:first": "commit-and-tag-version --first-release",
@@ -42,7 +43,7 @@
     "build": "pnpm exec nx run-many -t build",
     "build:changed": "pnpm exec nx affected --target=build --base=origin/main --head=HEAD",
     "ci:build:changed": "pnpm exec nx affected --target=build --base=remotes/origin/main --head=HEAD",
-    "ci:release": "pnpm -r run release && commit-and-tag-version",
+    "ci:release:old": "pnpm -r run release && commit-and-tag-version",
     "build:affected": "pnpm exec nx affected --target=build --base=origin/main --head=HEAD",
     "ci:build:affected": "pnpm exec nx affected --target=build --base=remotes/origin/main --head=HEAD",
     "build:watch": "pnpm exec nx watch --all -- nx run \\$NX_PROJECT_NAME:build",
@@ -65,6 +66,7 @@
   "devDependencies": {
     "@commitlint/cli": "^19.4.0",
     "@commitlint/config-conventional": "^19.2.2",
+    "@ekhtest/workspace-release-cli": "^0.0.1",
     "@eslint/js": "^9.9.0",
     "@jest/globals": "^29.7.0",
     "@nx/jest": "^19.6.0",
